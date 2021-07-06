@@ -563,7 +563,8 @@ def main(opt):
 
     # Evolve hyperparameters (optional)
     else:
-        
+        hasil = train(opt.hyp, opt, device)
+        print(hasil)
 
 
     # else:
