@@ -565,6 +565,8 @@ def main(opt):
     else:
         hasil = train(opt.hyp, opt, device)
         print(hasil)
+        if WORLD_SIZE > 1 and RANK == 0:
+            _ = [print('Destroying process group... ', end=''), dist.destroy_process_group(), print('Done.')]
 
 
     # else:
